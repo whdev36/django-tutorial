@@ -1,0 +1,8 @@
+myworld
+.vscode
+db.sqlite3
+members/migrations
+
+# Caches
+members/__pycache__
+config/__pycache__
