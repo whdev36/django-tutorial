@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
+{% extends "master.html" %}
 
-<head>
-    <title>All Members</title>
-</head>
+{% block title %}All Members{% endblock %}
 
-<body>
+{% block content %}
     <h1>Members</h1>
 
     <ul>
@@ -13,6 +10,4 @@
             <li><a href="{% url 'details' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></li>
         {% endfor %}
     </ul>
-</body>
-
-</html>
+{% endblock %}
