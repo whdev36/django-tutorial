@@ -4,6 +4,7 @@ from django.template import loader
 from .models import Member
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from .forms import ContactForm
 
 def members(request):
     all_members = Member.objects.all()
@@ -26,3 +27,16 @@ def login_user(request):
         else:
             messages.warning(request, 'Account does not exist, please log in.')
     return render(request, 'login.html', {})
+
+
+def contact_form(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your message has been sent successfully!')
+            return redirect('home')
+    else:
+        form = ContactForm()
+    template = loader.get_template('contact.html')
+    return HttpResponse(template.render({'form': form}, request))

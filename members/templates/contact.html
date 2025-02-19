@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form class="bg-light p-5 border shadow rounded" method="post">
+            <h1 class="mb-5">Contact Us</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success w-100">Send</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
