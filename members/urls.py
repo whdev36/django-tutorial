@@ -6,4 +6,5 @@ urlpatterns = [
     path('member/<int:id>/', views.details, name='details'),  # member details
     path('login/', views.login_user, name='login'),
     path('contact/', views.contact_form, name='contact-form'),
+    path('register/', views.register_user, name='register'),
 ]

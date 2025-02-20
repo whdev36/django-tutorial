@@ -6,3 +6,5 @@ members/migrations
 # Caches
 members/__pycache__
 config/__pycache__
+
+bits.py

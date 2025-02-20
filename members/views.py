@@ -4,7 +4,7 @@ from django.template import loader
 from .models import Member
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from .forms import ContactForm
+from .forms import ContactForm, MemberCreationForm
 
 def members(request):
     all_members = Member.objects.all()
@@ -39,4 +39,19 @@ def contact_form(request):
     else:
         form = ContactForm()
     template = loader.get_template('contact.html')
+    return HttpResponse(template.render({'form': form}, request))
+
+def register_user(request):
+    if request.method == 'POST':
+        form = MemberCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, 'Registration successful! Welcome to the site.')
+            return redirect('home')
+        else:
+            messages.warning(request, 'Please correct the errors below.')
+    else:
+        form = MemberCreationForm()
+    template = loader.get_template('register.html')
     return HttpResponse(template.render({'form': form}, request))
