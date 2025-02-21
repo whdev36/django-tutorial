@@ -5,9 +5,9 @@
 {% block content %}
     <h1>Members</h1>
 
-    <ul>
+    <div class="list-group list-group-flush">
         {% for member in members %}
-            <li><a href="{% url 'details' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></li>
+            <a class="list-group-item" href="{% url 'details' member.id %}">{{ member.first_name }} {{ member.last_name }}</a>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}
