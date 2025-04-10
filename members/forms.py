@@ -27,7 +27,7 @@ class ContactForm(forms.ModelForm):
             raise forms.ValidationError('First name is required.')
         return first_name
     
-    def clean_last_nam(self):
+    def clean_last_name(self):
         last_name = self.cleaned_data.get('last_name')
         if not last_name:
             raise forms.ValidationError('Last name is required.')
@@ -36,7 +36,7 @@ class ContactForm(forms.ModelForm):
 class MemberCreationForm(UserCreationForm):
     class Meta:
         model = Member
-        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password1']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -45,7 +45,7 @@ class MemberCreationForm(UserCreationForm):
             if field in self.fields:
                 self.fields[field].widget.attrs.update({
                     'placeholder': attrs['placeholder'],
-                    'class': 'form-control',
+                    'class': 'form-control form-control-lg',
                 })
             self.fields[field].label = attrs['label']
             self.fields[field].label_suffix = ' *'
@@ -56,8 +56,8 @@ class MemberCreationForm(UserCreationForm):
         return mark_safe(
             '\n'.join(
                 f'<div class="form-group mb-3">'
-                f'{field.label_tag()}{field}'
-                f'{"".join(f"<div class=\"text-danger\">{error}</div>" for error in field.errors)}'
+                f'{field.label_tag(attrs={"class": "form-label"})}{field}'
+                # f'{"".join(f"<div class=\"text-danger\">{error}</div>" for error in field.errors)}'
                 f'</div>'
                 if not field.is_hidden else str(field)
                 for field in self

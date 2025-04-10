@@ -129,5 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # https://github.com/whdev36/django-tutorial/blob/main/config/settings.py
 
 AUTH_USER_MODEL = 'members.Member'
-LOGIN_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = ''
