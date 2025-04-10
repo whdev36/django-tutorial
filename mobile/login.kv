@@ -1,0 +1,23 @@
+<LoginScreen>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    TextInput:
+        id: username
+        hint_text: "Username"
+        multiline: False
+
+    TextInput:
+        id: password
+        hint_text: "Password"
+        password: True
+        multiline: False
+
+    Button:
+        text: "Login"
+        on_press: root.do_login()
+
+    Label:
+        id: status
+        text: ""
