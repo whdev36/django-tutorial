@@ -7,7 +7,6 @@
         <div class="col-md-6 offset-md-3 bg-light p-5 border shadow rounded">
             <h1 class="mb-5 text-center">Register</h1>
             <form class="" method="post">
-                <!-- form errors -->
                 {% csrf_token %}
                 {{ form.as_div }}
                 <button type="submit" class="btn btn-lg btn-success w-100">Register</button>

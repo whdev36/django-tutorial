@@ -57,7 +57,7 @@ class MemberCreationForm(UserCreationForm):
             '\n'.join(
                 f'<div class="form-group mb-3">'
                 f'{field.label_tag(attrs={"class": "form-label"})}{field}'
-                # f'{"".join(f"<div class=\"text-danger\">{error}</div>" for error in field.errors)}'
+                f'{"".join(f"<div class=\"text-danger\">{error}</div>" for error in field.errors)}'
                 f'</div>'
                 if not field.is_hidden else str(field)
                 for field in self

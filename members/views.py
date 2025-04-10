@@ -11,6 +11,7 @@ from django.utils.http import url_has_allowed_host_and_scheme
 
 def members(request):
     all_members = Member.objects.all()
+    print(request.endpoint)
     template = loader.get_template('all_members.html')
     return HttpResponse(template.render({'members': all_members.values()}, request))
 
