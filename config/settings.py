@@ -26,10 +26,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'members',  # members added
-    'rest_framework',
-    'rest_framework.authtoken',
-    'api'
 ]
 
 MIDDLEWARE = [
@@ -137,6 +133,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Authentication configuration
 # https://github.com/whdev36/django-tutorial/blob/main/config/settings.py
 
-AUTH_USER_MODEL = 'members.Member'
+# AUTH_USER_MODEL = ''
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = ''
