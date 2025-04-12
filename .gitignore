@@ -1,8 +1,6 @@
-myworld
+env
 .vscode
 db.sqlite3
-members/migrations
-api/migrations
 
 # Caches
 config/__pycache__
