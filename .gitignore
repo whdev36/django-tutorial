@@ -4,4 +4,3 @@ db.sqlite3
 config/__pycache__
 main/__pycache__
 main/migrations
-bits.py
