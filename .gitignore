@@ -5,8 +5,6 @@ members/migrations
 api/migrations
 
 # Caches
-members/__pycache__
-api/__pycache__
 config/__pycache__
 
 bits.py

@@ -1,9 +1,0 @@
-{% extends "master.html" %}
-
-{% block title %}Member {{ member.first_name }} {{ member.last_name }}{% endblock %}
-
-{% block content %}
-    <h1>{{ member.first_name }} {{ member.last_name }}</h1>
-    <p>{{ member.email }}</p>
-    <p>{{ member.date_joined }}</p>
-{% endblock %}
